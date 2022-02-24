@@ -1,14 +1,25 @@
 import React, {useState, useEffect} from "react";
 
 function Timer () {
-const [time, setTime] = useState(5000);
+const [time, setTime] = useState(100);
 const [pauseTimer, setPauseTimer] = useState(false);
-
 const toggleTimerButton = document.getElementById('toggleTimer');
 
 const countdown = () => {
     setTime((prev)=> prev - 1);
 }
+
+const toggleTimer = () => {
+    setPauseTimer(!pauseTimer);
+}
+
+const parseTime = () => {
+    let min = Math.floor(time / 60);
+    let sec = time % 60;
+    return `${min}: ${sec}`;
+}
+
+const parsedTime = parseTime();
 
 useEffect(() => {
     if (!pauseTimer) {
@@ -20,30 +31,15 @@ useEffect(() => {
 }
 }, [time, pauseTimer])
 
-const toggleTimer = () => {
-    setPauseTimer(!pauseTimer);
-    if (toggleTimerButton){
-    toggleTimerButton.innerHTML = pauseTimer ?  'Currently: on' : 'Currently: off';
-    }
-
-}
-
 useEffect(()=> {
     if (toggleTimerButton){
-        toggleTimerButton.innerHTML = pauseTimer ?  'Currently: on' : 'Currently: off';
+        toggleTimerButton.innerHTML = pauseTimer ?  'Currently: off' : 'Currently: on';
         }
-}, [toggleTimerButton])
-
-const parseTime = () => {
-    const formattedTime = {};
-
-    return formattedTime;
-}
-
+}, [toggleTimerButton, pauseTimer])
 
     return (
         <>
-        <p>{time}</p>
+        <p>{parsedTime}</p>
         <input type="text" name="timer" list="time" />
         <datalist id="time">
             <option value="5" />
