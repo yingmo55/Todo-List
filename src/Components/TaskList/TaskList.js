@@ -1,14 +1,15 @@
 import React, {useState, useEffect} from 'react';
-
+import Task from '../Task/Task';
 
 const TaskList = (props) => {
     const todoList = props.todoList;
-    const listItem = todoList.map((todo, index) =>
-        <li key={'key'+index}>{todo.task}</li>
-        )
+    const deleteItem = props.deleteItem;
+
     return (
         <ol>
-            {listItem}
+            {todoList.map((todo) =>
+            <Task taskDescription={todo.task} key={todo.id} deleteItem={deleteItem}/>
+            )}
         </ol>
     );
 }
