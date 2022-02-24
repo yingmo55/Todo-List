@@ -2,9 +2,14 @@ import React, {useState, useEffect} from 'react';
 
 
 const Task = (props) => {
-    const {taskDescription, key} = props;
+    const {todo, deleteItem} = props;
+
+    const deleteTask = () => {
+        deleteItem(todo.id);
+    }
+
     return (
-        <li key={key}>{taskDescription}</li>
+        <li>{todo.task}<button onClick={deleteTask}>-</button></li>
     );
 }
 

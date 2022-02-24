@@ -10,15 +10,28 @@ const updateTodoField = e => {
     e.preventDefault();
     setTodo(e.target.value);
 }
+
+const generateID = () => {
+    return Math.floor(Math.random() * 100).toString() + todoList.length 
+}
+
 const addToTodos = () => {
     setTodoList((prev) =>
         [...prev, {
             task: todo,
+            id: generateID(),
             time: '1970-1-1'
             }
         ])
-    setTodo('')
+    setTodo('');
     todoItems.value = '';
+}
+
+const deleteItem = deletedItem => {
+    setTodoList((tasks)=> {
+        console.log(tasks)
+        tasks.filter((item) => item.id !== deletedItem)
+    })
 }
 
     return (
@@ -26,7 +39,7 @@ const addToTodos = () => {
             <input id='todoItems' type='text' onChange={updateTodoField} />
             <button onClick={addToTodos}>+</button>
             <hr/>
-        <TaskList todoList={todoList} />
+        <TaskList todoList={todoList} deleteItem={deleteItem}/>
         </>
     )
 }
