@@ -13,6 +13,7 @@ const countdown = () => {
 useEffect(() => {
     if (!pauseTimer) {
         const timeInterval = setInterval(countdown, 1000);
+        
     return () => {
         clearInterval(timeInterval);
     };
@@ -21,7 +22,22 @@ useEffect(() => {
 
 const toggleTimer = () => {
     setPauseTimer(!pauseTimer);
+    if (toggleTimerButton){
     toggleTimerButton.innerHTML = pauseTimer ?  'Currently: on' : 'Currently: off';
+    }
+
+}
+
+useEffect(()=> {
+    if (toggleTimerButton){
+        toggleTimerButton.innerHTML = pauseTimer ?  'Currently: on' : 'Currently: off';
+        }
+}, [toggleTimerButton])
+
+const parseTime = () => {
+    const formattedTime = {};
+
+    return formattedTime;
 }
 
 
@@ -33,7 +49,7 @@ const toggleTimer = () => {
             <option value="5" />
             <option value="10" />
         </datalist>
-        <button onClick={toggleTimer} id='toggleTimer'>Pause</button>
+        <button onClick={toggleTimer} id='toggleTimer'>Loading...</button>
         </>
     );
 }
