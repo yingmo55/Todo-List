@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import TaskList from '../TaskList/TaskList';
 
 function Todo() {
@@ -28,14 +28,14 @@ const addToTodos = () => {
 }
 
 const deleteItem = deletedItem => {
-    setTodoList((tasks)=> {
-        console.log(tasks)
-        tasks.filter((item) => item.id !== deletedItem)
-    })
+    setTodoList((tasks)=> 
+    tasks.filter((item) => item.id !== deletedItem)
+    )
 }
 
     return (
         <>
+        <h2>Todo List</h2>
             <input id='todoItems' type='text' onChange={updateTodoField} />
             <button onClick={addToTodos}>+</button>
             <hr/>
