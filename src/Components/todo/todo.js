@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import TaskList from '../TaskList/TaskList';
 
 function Todo() {
 const [todo, setTodo] = useState('');
@@ -20,21 +21,12 @@ const addToTodos = () => {
     todoItems.value = '';
 }
 
-
-const renderList = () => {
-    const listItem = todoList.map(todo, index =>
-        <li key={'key'+index}>{todo.task}</li>
-        )
-    return listItem;
-}
-
     return (
         <>
             <input id='todoItems' type='text' onChange={updateTodoField} />
             <button onClick={addToTodos}>+</button>
-        <ol>
             <hr/>
-        </ol>
+        <TaskList todoList={todoList} />
         </>
     )
 }
