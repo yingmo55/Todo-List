@@ -1,29 +1,29 @@
 import React, {useState, useEffect} from "react";
+import SetTimer from "../SetTimer/SetTimer";
+
 
 function Timer () {
-const [time, setTime] = useState(5);
+const [time, setTime] = useState(0);
 const [pauseTimer, setPauseTimer] = useState(true);
-const toggleTimerButton = document.getElementById('toggleTimer');
 const [timerStart, setTimerStart] = useState(false);
-const setTimerSelect = document.getElementById('setTimerSelect');
+const [isBreak, setIsBreak] = useState(false);
+
+const toggleTimerButton = document.getElementById('pauseTimerBtn');
+
 
 const countdown = () => {
     setTime((prev)=> prev - 1);
 }
 
-const toggleTimer = () => {
+const togglePause = () => {
     setPauseTimer(!pauseTimer);
-    if (time === 0) {
-        console.log('times up. Take a break!')
-    }
 }
 
 const parseTime = () => {
-    let min = Math.floor(time / 60) >= 10 ? Math.floor(time / 60) : "0" + Math.floor(time / 60);
-    let sec = time % 60 >= 10 ? time % 60 : "0" + time % 60;
+    const min = Math.floor(time / 60) >= 10 ? Math.floor(time / 60) : "0" + Math.floor(time / 60);
+    const sec = time % 60 >= 10 ? time % 60 : "0" + time % 60;
     return `${min}:${sec}`;
 }
-
 const parsedTime = parseTime();
 
 useEffect(() => {
@@ -35,24 +35,31 @@ useEffect(() => {
 }
 }, [time, pauseTimer])
 
-useEffect(()=>{
-    if (time <= 0) {
-        console.log('times up. Take a break!')
-        setPauseTimer(true);
-        setTimerStart(false);
+useEffect(()=> {
+    if (time === 0 && timerStart){
+        setIsBreak(true)
+        return;
+    } else {
+        setIsBreak(false);
     }
 }, [time])
 
 useEffect(()=> {
     if (toggleTimerButton){
-        toggleTimerButton.innerHTML = pauseTimer ?  'Currently: off' : 'Currently: on';
+        toggleTimerButton.innerHTML = pauseTimer ?  'Pause Timer' : 'Unpause Timer';
         } 
 }, [toggleTimerButton, pauseTimer])
 
-const startTimer = () => {
-    console.log('timer start!')
+const toggleStart = () => {
+    if (!timerStart && time !== 0) {
     setPauseTimer(false);
     setTimerStart(true);
+    return;
+    }
+    setTime(0);
+    setPauseTimer(true);
+    setTimerStart(false);
+    setIsBreak(false);
 }
 
 const changeTimer = e => {
@@ -64,20 +71,13 @@ const changeTimer = e => {
     return (
         <>
         <p>🍅</p>
-        <p>{parsedTime}</p>
-        { !timerStart &&
-        (<div id='setTimerSelect'>
-        <label htmlFor='timer'>Set timer here:</label>
-        <select id="timer" list="time" onChange={changeTimer} >
-            <option  value="">---select a time---</option>
-            <option  value="0.1">test</option>
-            <option  value="5">5 min - great for a kickstart!</option>
-            <option value="10">10 min - for a short task</option>
-            <option value="25">25 min- standard pomodoro</option>
-        </select>
-        <button type='button' onClick={startTimer}>Start Timer</button>
-        </div>)}
-        <button onClick={toggleTimer} id='toggleTimer'>Loading...</button>
+        <p>{!isBreak ? parsedTime : 'Congrats! Take a break and come back to work'}</p>
+        { !timerStart && <SetTimer 
+        onChange={changeTimer} onClick={toggleStart} />}
+        { (!isBreak && timerStart) &&
+            <button onClick={togglePause} id='pauseTimerBtn'>Loading...</button>}
+        {timerStart &&
+        <button onClick={toggleStart}>Reset Timer</button>}
         </>
     );
 }
