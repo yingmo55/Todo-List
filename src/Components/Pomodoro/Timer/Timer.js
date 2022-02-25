@@ -70,7 +70,6 @@ const changeTimer = e => {
 
     return (
         <div className={props.className}>
-        <h2>🍅</h2>
         <p>{!isBreak ? parsedTime : 'Congrats! Take a break and come back to work'}</p>
         { !timerStart && <SetTimer 
         onChange={changeTimer} onClick={toggleStart} />}
