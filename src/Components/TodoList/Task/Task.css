@@ -21,3 +21,11 @@ li + hr {
     border: none;
     border-top: 1px dashed white;
 }
+
+label > input[type='checkbox'] {
+    margin-right: 1em;
+}
+
+input:checked + span  {
+    text-decoration: line-through;
+}

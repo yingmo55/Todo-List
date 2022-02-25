@@ -10,7 +10,12 @@ const Task = (props) => {
 
     return (
         <>
-        <li>{todo.task}<button id='deleteTask' onClick={deleteTask}>-</button></li>
+        <li>
+        <label htmlFor={props.taskId}>
+            <input id={props.taskId} type='checkbox' />
+            <span>{todo.task}</span>
+        </label>
+        <button id='deleteTask' onClick={deleteTask}>-</button></li>
         <hr />
         </>
     );

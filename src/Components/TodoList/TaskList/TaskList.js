@@ -8,7 +8,7 @@ const TaskList = (props) => {
     return (
         <ol>
             { todoList && todoList.map((todo) =>
-            <Task todo={todo} key={todo.id} deleteItem={deleteItem}/>)}
+            <Task todo={todo} key={todo.id} taskId={todo.id} deleteItem={deleteItem}/>)}
         </ol>
     );
 }
