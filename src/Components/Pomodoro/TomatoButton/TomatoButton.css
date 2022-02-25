@@ -1,0 +1,28 @@
+.tomatoTimer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+}
+
+#timerIcon + p {
+    margin: 10px 0;
+}
+
+#timerIcon {
+    border: 1px solid yellow;
+    background: center / contain no-repeat url('./tomato.png');
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    transition: all 400ms ease-in-out 100ms;
+}
+
+#timerIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.tomatoTimer > p {
+    font-size: calc(10px + 1vmin);
+}
