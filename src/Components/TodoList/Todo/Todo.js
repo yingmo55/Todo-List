@@ -11,16 +11,11 @@ const updateTodoField = e => {
     setTodo(e.target.value);
 }
 
-const generateID = () => {
-    return Math.floor(Math.random() * 100).toString() + todoList.length 
-}
-
 const addToTodos = () => {
     setTodoList((prev) =>
         [...prev, {
             task: todo,
-            id: generateID(),
-            time: '1970-1-1'
+            id: Date.now()
             }
         ])
     setTodo('');
