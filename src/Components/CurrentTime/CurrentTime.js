@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
+import './CurrentTime.css';
 
-function CurrentTime() {
+function CurrentTime(props) {
     let date = new Date();
-    const [time, setTime] = useState('');
-    const [dayOfWeek, setDayOfWeek] = useState('')
+    const [time, setTime] = useState(date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    const [dayOfWeek, setDayOfWeek] = useState(Intl.DateTimeFormat('en-US', { weekday: 'long'}).format(date));
 
     function timeNow(){
         date = new Date();
