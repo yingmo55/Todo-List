@@ -6,10 +6,45 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
 .App-link {
   color: #61dafb;
+}
+
+/*Font Size*/
+
+h2 {
+  font-size: calc(30px + 2vmin);
+}
+
+p, a, span {
+  font-size: calc(10px + 2vmin);
+}
+
+
+/*For loading*/
+.fadingAnimation {
+  position: absolute;
+  z-index: 3;
+  height: 100vh;
+  width: 100vw;
+  color: aliceblue;
+  background-color: #151922;
+  animation: fadeout 1s ease-in-out forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fadeout {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+    display: none;
+    visibility: hidden;
+  }
 }

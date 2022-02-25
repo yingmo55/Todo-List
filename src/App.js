@@ -6,11 +6,10 @@ import CurrentTime from './Components/CurrentTime/CurrentTime';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <CurrentTime />
-        <Timer />
-      <Todo />
-      </header>
+        <div className='fadingAnimation'></div>
+        <CurrentTime className='currentTime' />
+        <Timer className='timer' />
+        <Todo className='todoList' />
     </div>
   );
 }
