@@ -1,1 +1,4 @@
- 
+#setTimerSelect {
+    display: flex;
+    flex-flow: column wrap;
+}

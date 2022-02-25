@@ -1,1 +1,11 @@
- 
+.timer {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: rgb(54, 74, 92);
+    padding: 10px;
+}
+
+.timer > * {
+    margin: 5px 0;
+}

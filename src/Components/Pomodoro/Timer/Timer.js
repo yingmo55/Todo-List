@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import SetTimer from "../SetTimer/SetTimer";
-
+import './Timer.css';
 
 function Timer (props) {
 const [time, setTime] = useState(0);
@@ -46,7 +46,7 @@ useEffect(()=> {
 
 useEffect(()=> {
     if (toggleTimerButton){
-        toggleTimerButton.innerHTML = pauseTimer ?  'Pause Timer' : 'Unpause Timer';
+        toggleTimerButton.innerHTML = !pauseTimer ?  'Pause Timer' : 'Unpause Timer';
         } 
 }, [toggleTimerButton, pauseTimer])
 
@@ -70,13 +70,12 @@ const changeTimer = e => {
 
     return (
         <div className={props.className}>
-        <p>{!isBreak ? parsedTime : 'Congrats! Take a break and come back to work'}</p>
-        { !timerStart && <SetTimer 
-        onChange={changeTimer} onClick={toggleStart} />}
-        { (!isBreak && timerStart) &&
-            <button onClick={togglePause} id='pauseTimerBtn'>Loading...</button>}
-        {timerStart &&
-        <button onClick={toggleStart}>Reset Timer</button>}
+            <p>{!isBreak ? parsedTime : 'Congrats! Take a break and come back to work'}</p>
+            { !timerStart && <SetTimer onChange={changeTimer} onClick={toggleStart} />}
+            { (!isBreak && timerStart) &&
+                <button onClick={togglePause} id='pauseTimerBtn'>Loading...</button>}
+            {timerStart &&
+            <button onClick={toggleStart}>Reset Timer</button>}
         </div>
     );
 }
