@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import TaskList from '../TaskList/TaskList';
 
-function Todo() {
+function Todo(props) {
 const [todo, setTodo] = useState('');
 const [warning, setWarning] = useState(false);
 const [todoList, setTodoList] = useState([]);
-const todoItems = document.getElementById('todoItems');
+const todoInput = document.getElementById('todoInput');
 
 const updateTodoField = e => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const addToTodos = () => {
         }
     ])
     setTodo('');
-    todoItems.value = '';
+    todoInput.value = '';
 }
 
 const deleteItem = deletedItem => {
@@ -35,16 +35,23 @@ const deleteItem = deletedItem => {
     )
 }
 
+const enterByEnter = e => {
+    if (document.activeElement === todoInput && e.key === 'Enter') {
+        addToTodos()
+    }
+}
+
     return (
-        <>
+        <div className={props.className}>
         <h2>Todo List</h2>
-            <input id='todoItems' type='text' onChange={updateTodoField} />
-            <button onClick={addToTodos}>+</button>
+            <input id='todoInput' type='text'
+                   onChange={updateTodoField}
+                   onKeyDown={enterByEnter} />
+            <button onClick={addToTodos} id='addTask'>+</button>
             <hr/>
         <TaskList todoList={todoList} deleteItem={deleteItem}/>
         {warning && <p id='emptyTaskWarning'>The first character of a task and the task cannot be empty</p>}
-        {}
-        </>
+        </div>
     )
 }
 
