@@ -22,7 +22,7 @@ function CurrentTime() {
 
     return (
         <>
-        <time>{time}</time>
+        <p>{time}</p>
         <p>{dayOfWeek}</p>
         </>
     )
