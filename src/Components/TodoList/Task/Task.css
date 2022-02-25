@@ -1,1 +1,23 @@
- 
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+#deleteTask {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#deleteTask:hover {
+    cursor: pointer;
+}
+
+li + hr {
+    border: none;
+    border-top: 1px dashed white;
+}

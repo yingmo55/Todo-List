@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import './Task.css';
 
 const Task = (props) => {
     const {todo, deleteItem} = props;
@@ -9,7 +9,10 @@ const Task = (props) => {
     }
 
     return (
-        <li>{todo.task}<button onClick={deleteTask}>-</button></li>
+        <>
+        <li>{todo.task}<button id='deleteTask' onClick={deleteTask}>-</button></li>
+        <hr />
+        </>
     );
 }
 
