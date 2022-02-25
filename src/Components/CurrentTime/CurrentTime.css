@@ -1,1 +1,7 @@
- 
+.currentTime > h2 {
+    font-size: 80px;
+}
+
+.currentTime > h3 {
+    font-size: 50px;
+}

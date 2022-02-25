@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import SetTimer from "../SetTimer/SetTimer";
 
 
-function Timer () {
+function Timer (props) {
 const [time, setTime] = useState(0);
 const [pauseTimer, setPauseTimer] = useState(true);
 const [timerStart, setTimerStart] = useState(false);
@@ -69,8 +69,8 @@ const changeTimer = e => {
 }
 
     return (
-        <>
-        <p>🍅</p>
+        <div className={props.className}>
+        <h2>🍅</h2>
         <p>{!isBreak ? parsedTime : 'Congrats! Take a break and come back to work'}</p>
         { !timerStart && <SetTimer 
         onChange={changeTimer} onClick={toggleStart} />}
@@ -78,7 +78,7 @@ const changeTimer = e => {
             <button onClick={togglePause} id='pauseTimerBtn'>Loading...</button>}
         {timerStart &&
         <button onClick={toggleStart}>Reset Timer</button>}
-        </>
+        </div>
     );
 }
 

@@ -22,10 +22,10 @@ function CurrentTime(props) {
       })
 
     return (
-        <>
-        <p>{time}</p>
-        <p>{dayOfWeek}</p>
-        </>
+        <div className={props.className}>
+        <h2>{time}</h2>
+        <h3>{dayOfWeek}</h3>
+        </div>
     )
 }
 
