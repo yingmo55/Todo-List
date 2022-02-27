@@ -34,3 +34,7 @@ label > input[type='checkbox'] {
 input:checked + span  {
     text-decoration: line-through;
 }
+
+span {
+    font-size: 16px;
+}
