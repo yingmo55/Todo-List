@@ -14,7 +14,11 @@
   color: #61dafb;
 }
 
-/*Font Size*/
+/*Font & Font Size*/
+h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: 'Roboto Serif', sans-serif;
+}
+
 
 h2 {
   font-size: calc(30px + 2vmin);
