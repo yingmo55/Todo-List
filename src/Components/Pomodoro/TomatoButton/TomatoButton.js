@@ -1,22 +1,16 @@
-import React, {useState} from "react";
-import Timer from "../Timer/Timer";
+import React from "react";
 import './TomatoButton.css';
 
 function TomatoButton(props) {
-
-const [timerPopup, setTimerPopup] = useState(false);
-
-const toggleTimer = () => {
-    setTimerPopup(!timerPopup)
-}
-
+const {parsedTime, toggleTimer, timerStart, isBreak, timerPopup, pauseTimer} = props;
     return (
     <div className={props.className} >
-        {timerPopup && <Timer className='timer'/> }
         <button onClick={toggleTimer} id='timerIcon'> </button>
-        <p>Pomodoro timer</p>
+        <p>{!timerStart || timerPopup ? 
+        'Pomodoro' : pauseTimer ? 'paused' : 
+         !isBreak ? 
+        parsedTime : 'Break time!'}</p>
     </div>)
-
 }
 
 export default TomatoButton;
