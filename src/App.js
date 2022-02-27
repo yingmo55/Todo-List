@@ -1,8 +1,7 @@
 import './App.css';
 import Todo from './Components/TodoList/Todo/Todo';
-import Timer from './Components/Pomodoro/Timer/Timer';
 import CurrentTime from './Components/CurrentTime/CurrentTime';
-import TomatoButton from './Components/Pomodoro/TomatoButton/TomatoButton';
+import TimerDisplay from './Components/Pomodoro/TimerDisplay/TimerDisplay';
 
 function App() {
   return (
@@ -10,7 +9,7 @@ function App() {
         <div className='fadingAnimation'></div>
         <CurrentTime className='currentTime' />
         <Todo className='todoList' />
-        <TomatoButton className='tomatoTimer' />
+        <TimerDisplay className='timerDisplay' />
     </div>
   );
 }
