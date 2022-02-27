@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import TaskList from '../TaskList/TaskList';
+import './Todo.css';
 
 function Todo(props) {
 const [todo, setTodo] = useState('');
@@ -43,7 +44,7 @@ const enterByEnter = e => {
 
     return (
         <div className={props.className}>
-        <h2>Todo List</h2>
+        <h2 id='todoTitle'>Todo</h2>
             <input id='todoInput' type='text'
                    onChange={updateTodoField}
                    onKeyDown={enterByEnter} />

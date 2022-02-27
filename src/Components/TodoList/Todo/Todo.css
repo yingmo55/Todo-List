@@ -1,1 +1,25 @@
- 
+.todoList {
+    max-width: 70vw;
+}
+
+#todoTitle {
+    font-size: 30px;
+}
+
+#addTask {
+    border: none;
+    margin-left: 5px;
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+}
+
+#addTask:hover {
+    cursor: pointer;
+    color: gold;
+}
+
+#addTask:active {
+    cursor: pointer;
+    color: rgb(255, 136, 0);
+}

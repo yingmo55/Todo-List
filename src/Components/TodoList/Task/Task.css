@@ -15,6 +15,11 @@ li {
 
 #deleteTask:hover {
     cursor: pointer;
+    color: rgb(230, 21, 21);
+}
+
+#deleteTask:active {
+    color: brown;
 }
 
 li + hr {
