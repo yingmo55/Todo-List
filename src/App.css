@@ -19,9 +19,8 @@ h1, h2, h3, h4, h5, h6, p, a, span {
   font-family: 'Roboto Serif', sans-serif;
 }
 
-
 h2 {
-  font-size: calc(30px + 2vmin);
+  font-size: 36px;
 }
 
 p, a, span {
@@ -30,7 +29,7 @@ p, a, span {
 
 /* Add margin between elements */
 div + div {
-  margin: 10px 0;
+  margin: 15px 0;
 }
 
 
