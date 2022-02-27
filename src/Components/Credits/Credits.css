@@ -1,0 +1,38 @@
+#credits {
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    background-color: transparent;
+    border: none;
+    color: antiquewhite;
+    font-family: 'Roboto Serif', sans-serif;
+}
+
+#credits:hover {
+    cursor: pointer;
+    color: grey;
+}
+
+#credits:active {
+    color: rgb(0, 0, 0);
+}
+
+#creditWindow {
+    position: fixed;
+    left: 5px;
+    bottom: 20px;
+    min-width: 50px;
+    height: 20px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+
+}
+
+#creditWindow p, a  {
+    color: aliceblue;
+    font-size: 12px;
+}
+#creditWindow a {
+    color: aquamarine;
+} 

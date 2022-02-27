@@ -14,13 +14,15 @@
   color: #61dafb;
 }
 
-/*Font & Font Size*/
-h1, h2, h3, h4, h5, h6, p, a, span {
+/*Font Size*/
+h1, h2, h3, h4, h5, h6,
+p, a, span {
   font-family: 'Roboto Serif', sans-serif;
 }
 
+
 h2 {
-  font-size: 36px;
+  font-size: calc(30px + 2vmin);
 }
 
 p, a, span {
@@ -29,7 +31,7 @@ p, a, span {
 
 /* Add margin between elements */
 div + div {
-  margin: 15px 0;
+  margin: 10px 0;
 }
 
 
