@@ -1,11 +1,22 @@
 .timer {
-    position: relative;
     display: flex;
     flex-flow: column wrap;
     background-color: rgb(54, 74, 92);
     padding: 10px;
+    position: fixed;
+    bottom: 110px;
+    right: 0;
+    margin: 5px;
+    width: 200px;
+    align-items: center;
+    z-index: 3;
 }
 
 .timer > * {
     margin: 5px 0;
+}
+
+.timer button {
+    margin: 5px;
+    align-self: center;
 }

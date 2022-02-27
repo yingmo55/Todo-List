@@ -6,7 +6,7 @@
 }
 
 #timerIcon + p {
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 #timerIcon {
@@ -15,12 +15,10 @@
     height: 50px;
     width: 50px;
     border-radius: 25px;
-    transition: all 400ms ease-in-out 100ms;
 }
 
 #timerIcon:hover {
     cursor: pointer;
-    transform: scale(1.2);
 }
 
 .tomatoTimer > p {
