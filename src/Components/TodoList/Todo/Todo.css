@@ -23,3 +23,8 @@
     cursor: pointer;
     color: rgb(255, 136, 0);
 }
+
+#emptyTaskWarning {
+    color: rgb(255, 104, 104);
+    font-size: inherit;
+}

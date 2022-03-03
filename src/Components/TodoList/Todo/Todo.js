@@ -51,7 +51,7 @@ const enterByEnter = e => {
             <button onClick={addToTodos} id='addTask'>+</button>
             <hr/>
         <TaskList todoList={todoList} deleteItem={deleteItem}/>
-        {warning && <p id='emptyTaskWarning'>The first character of a task and the task cannot be empty</p>}
+        {warning && <p id='emptyTaskWarning'>The first character of a task or the task cannot be empty</p>}
         </div>
     )
 }
