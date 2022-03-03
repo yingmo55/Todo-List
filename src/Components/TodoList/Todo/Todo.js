@@ -27,7 +27,6 @@ const addToTodos = () => {
         }
     ])
     setTodo('');
-    todoInput.value = '';
 }
 
 const deleteItem = deletedItem => {
@@ -46,6 +45,7 @@ const enterByEnter = e => {
         <div className={props.className}>
         <h2 id='todoTitle'>Todo</h2>
             <input id='todoInput' type='text'
+                   value={todo}
                    onChange={updateTodoField}
                    onKeyDown={enterByEnter} />
             <button onClick={addToTodos} id='addTask'>+</button>
