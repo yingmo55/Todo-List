@@ -1,9 +1,9 @@
-# 📝 Todo List - A todolist app with a time display and Promodoro timer
+# 📝 Todo List - A to-do list app with a time display and Promodoro timer
 ![project preview](./readme-asset/preview.jpg)  
 [![Netlify Status](https://api.netlify.com/api/v1/badges/f2facd41-941f-47f3-8749-ff72ca01ac68/deploy-status)](https://app.netlify.com/sites/tomatodo/deploys) 
 | 🔗 [Live](https://tomatodo.netlify.app/)
 ## Table of Contents
-- [📝 Todo List - A todolist app with a time display and Promodoro timer](#-todo-list---a-todolist-app-with-a-time-display-and-promodoro-timer)
+- [📝 Todo List - A to-do list app with a time display and Promodoro timer](#-todo-list---a-to-do-list-app-with-a-time-display-and-promodoro-timer)
   - [Table of Contents](#table-of-contents)
   - [What is This?](#what-is-this)
   - [How to Use](#how-to-use)
@@ -35,7 +35,7 @@ Navigate to the project's root folder in the terminal, and run
 
 **Adding/Deleting tasks in the to-do list:**
 
-type in the input box, and click the "+" button to add to it. It also supports adding by pressing the Enter key.
+Type in the input box, and click the "+" button to add to it. It also supports adding by pressing the Enter key.
 
 To mark/unmark a task, click the task or the checkbox.
 To delete a task, click the "-" button to the right of the task.
@@ -47,7 +47,10 @@ You can toggle the timer setting menu by clicking on the tomato icon. The countd
 
 
 ## Why Did I Make It?
-I use FancyZones from PowerToys to map the windows on my main monitor. And this is my custom grid:  
+
+I use FancyZones from PowerToys to map the windows on my main monitor. And this is what my custom grid looks like:  
+
+<img src='./readme-asset/fancyZones.png' style='margin: auto;' alt='FancyZones Layout' />
 
 I use the top left one for YouTube videos for background noise and the right one for the main component (IDE, websites I am debugging, etc.). And that leaves the bottom left part awkwardly showing a part of my desktop and the icons I left on my desktop most of the time. I usually put the Git Bash windows there when I am programming, but what about when I am not programming?  
 
@@ -56,22 +59,23 @@ I have a chrome extension called Momentum. I can technically fit a browser windo
 So it's time for me to write my own!
 
 ## Roadmap
-+ [ ] Add local storage to save the to-do list and timer
++ [x] ~~Add local storage to save the to-do list and timer~~
 + [ ] Add a weather widget
 + [ ] Add themes
 + [ ] Add background image support
 + [ ] Add sound for timer
 
 ## Change Log
-2/27/22 
-+ Deploy  app on Netlify
+**3/3/22**  
++ Add local storage for tasks
+
+**2/27/22**  
++ Deploy app on Netlify
 + Add README.md
 
 ## License
 This project uses the [MIT License](./LICENSE).
 
 ## Credits
-**Assets**
-
+**Assets**  
 <a href="https://www.flaticon.com/free-icons/tomato" title="tomato icons">Tomato icons created by Freepik - Flaticon</a></p>
-
