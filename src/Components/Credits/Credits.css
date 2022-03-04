@@ -1,6 +1,6 @@
 #credits {
     position: fixed;
-    bottom: 5px;
+    bottom: 10px;
     left: 5px;
     background-color: transparent;
     border: none;
@@ -26,13 +26,22 @@
     padding: 5px;
     display: flex;
     align-items: center;
-
+    background-color: #4a5191;
+    width: 40%;
+    padding: 20px;
 }
 
 #creditWindow p, a  {
-    color: aliceblue;
+    color: white;
     font-size: 12px;
 }
 #creditWindow a {
     color: aquamarine;
 } 
+
+@media screen and (min-width: 580px) {
+    #creditWindow {
+        width: fit-content;
+        padding: 10px;
+    }
+}
