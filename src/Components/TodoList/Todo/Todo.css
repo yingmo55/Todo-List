@@ -28,3 +28,22 @@
     color: rgb(255, 104, 104);
     font-size: inherit;
 }
+#removeAll {
+    border: none;
+    background-color: #d82a2a;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    color: white;
+}
+
+#removeAll:hover,
+#removeAll:focus {
+    cursor: pointer;
+    background-color: #ff5353;
+    box-shadow: 0px 0px 10px #ff5353;
+}
+
+#removeAll:active {
+    background-color: #74342c;
+}
