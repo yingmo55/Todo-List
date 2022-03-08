@@ -24,6 +24,10 @@
     color: rgb(255, 136, 0);
 }
 
+#emptyTaskWarning {
+    color: rgb(255, 104, 104);
+    font-size: inherit;
+}
 #removeAll {
     border: none;
     background-color: #d82a2a;

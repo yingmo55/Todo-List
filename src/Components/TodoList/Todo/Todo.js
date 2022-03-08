@@ -44,7 +44,6 @@ const addToTodos = () => {
     ])
     localStorage.setItem(taskID, todo); //local Storage
     setTodo('');
-    todoInput.value = '';
 }
 
 const deleteItem = deletedItem => {
@@ -75,6 +74,7 @@ useEffect(()=> {
         <div className={props.className}>
         <h2 id='todoTitle'>Todo</h2>
             <input id='todoInput' type='text'
+                   value={todo}
                    onChange={updateTodoField}
                    onKeyDown={enterByEnter} />
             <button onClick={addToTodos} id='addTask'>+</button>
